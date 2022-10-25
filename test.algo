@@ -1,0 +1,21 @@
+ALGORITHM read_sentence
+VAR
+    c: CHAR;
+    nb_char: INTEGER:= 0;
+    nb_word: INTEGER:= 1;
+    nb_voy: INTEGER:= 0; 
+    BEGIN
+    WHILE (c<>".") DO
+        read(c)
+        nb_char=nb_char+1;
+        IF (c=" ") THEN
+            nb_word=nb_word+1;
+        END_IF
+        IF (c in["o","a","e","u","i","y","A","O","U","I","E","Y"]) THEN
+            nb_voy=nb_voy+1;
+        END_IF
+
+    END_WHILE 
+    
+    write(nb_char,nb_word,nb_voy)
+    END.
